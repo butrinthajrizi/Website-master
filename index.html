@@ -13,30 +13,46 @@
     <header id="header">
         <div class="left-header">
             <span>butrinthajrizi.dev</span>
-            <div class="toggle">
-                <div class="darkmode">
-                  <input type="checkbox" class="checkbox" id="checkbox">
-                  <label for="checkbox" class="label"></label>
-                    <div class="ball"></div>
-                  </label>
-                </div>
-              </div>
+            <div id="toggle">
+                <i class="indicator"></i>
+            </div>
+            <script>
+                const body = document.querySelector('body');
+                const toggle = document.getElementById('toggle');
+                const header = document.querySelector('header')
+                const rightHeader = document.querySelector('.right-header')
+                const greetings = document.querySelector('.greetings')
+                toggle.onclick = function(){
+                    toggle.classList.toggle('active')
+                    body.classList.toggle('active')
+                    header.classList.toggle('active')
+                    rightHeader.classList.toggle('active')
+                    greetings.classList.toggle('active')
+                }
+            </script>
         </div>
         <div class="right-header">
             <a href="#header"><span>../home</span></a>
             <a href="#info"><span>../about</span></a>
             <a href="#repos"><span>../projects</span></a>
             <a href="#socials"><span>../contact</span></a>
+            
         </div>
-        <div class="right-header-mobile">
-            <span id="menu" class="material-symbols-outlined menu">
+        <div class="dropdown">
+            <span onclick="myFunction()" class="material-symbols-outlined dropbtn">
                 menu
                 </span>
-        </div>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#header"><span>../home</span></a>
+                <a href="#info"><span>../about</span></a>
+                <a href="#repos"><span>../projects</span></a>
+                <a href="#socials"><span>../contact</span></a>
+            </div>
+          </div>
     </header>
     <section class="entry">
         <img src="/images/butrintHajrizi.png">
-        <h3>Hi, I'm Butrint🎉;</h3>
+        <h3 class="greetings">Hi, I'm Butrint🎉;</h3>
         <h1>I'm a software engineer and a problem solver;</h1>
         <a href="https://www.linkedin.com/in/butrint-hajrizi-a13840245"><button>CONNECT WITH ME</button></a>
     </section>
